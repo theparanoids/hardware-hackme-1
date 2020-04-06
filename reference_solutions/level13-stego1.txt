@@ -1,0 +1,6 @@
+The hidden bits are shown in level13-stego1.png highlighted in red. These bits are noticeably out
+of place because a "normal" bitstream in this physical layout has all zeros (or all ones) in this
+region. Consulting the Xilinx CPLD address map files also shows that nothing is assigned to these
+bits.
+
+The answer is therefore 141efaea79fc06d1.

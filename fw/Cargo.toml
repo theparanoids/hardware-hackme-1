@@ -1,0 +1,38 @@
+[package]
+authors = ["R. Ou <robert.ou@verizonmedia.com>"]
+categories = ["embedded", "no-std"]
+name = "paranoids-hackme-1-fw"
+version = "0.0.1"
+build = "build.rs"
+
+[dependencies]
+cortex-m = "0.4.3"
+cortex-m-rt = "0.3.13"
+cortex-m-rtfm = "0.3.1"
+cortex-m-semihosting = "0.2.0"
+alloc-cortex-m = "0.3.2"
+heapless = "0.2.7"
+aes-nostd = { path = "../aes-nostd" }
+cryptastic = { path = "../cryptastic" }
+sha2 = "0.7.1"
+
+[dependencies.stm32f405]
+features = ["rt"]
+path = "../stm32f405"
+
+[dependencies.crc]
+version = "1.8.1"
+default-features = false
+
+# disable both incremental compilation and parallel codegen to reduce the chances of running into
+# rust-lang/rust#47074
+[profile.dev]
+codegen-units = 1
+incremental = false
+
+[profile.release]
+debug = true
+lto = true
+
+[patch.crates-io]
+cortex-m-rt = { path = "../cortex-m-rt-0.3.15" }

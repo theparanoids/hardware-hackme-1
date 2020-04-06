@@ -1,0 +1,11 @@
+[package]
+name = "aes-nostd"
+version = "0.1.0"
+authors = ["The Rust-Crypto Project Developers"]
+license = "MIT/Apache-2.0"
+homepage = "https://github.com/DaGenix/rust-crypto/"
+repository = "https://github.com/DaGenix/rust-crypto/"
+description = "AES functions extracted from the rust-crypto project"
+readme = "README.md"
+
+[dependencies]

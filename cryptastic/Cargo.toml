@@ -1,0 +1,6 @@
+[package]
+name = "cryptastic"
+version = "0.1.0"
+authors = ["R. Ou <robert.ou@verizonmedia.com>"]
+
+[dependencies]

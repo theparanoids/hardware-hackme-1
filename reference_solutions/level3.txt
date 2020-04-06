@@ -1,0 +1,2 @@
+You cannot bet a negative number, but you can bet more than 2^31 dollars. The solution is to just
+bet $4,000,000,000 (entered without a dollar sign or commas) with any arbitrary guess.

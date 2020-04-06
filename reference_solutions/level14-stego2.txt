@@ -1,0 +1,29 @@
+The hidden bits are shown in level14-stego2-phys.png highlighted in red. These bits are noticeably
+out of place because of a number of reasons. First of all, they use far more inputs than normal
+(seen as many zero bits). Second of all, they are towards the "end" of the macrocell. However, the
+terms that come before (which are to the right of the red box in this image) are all unused. This
+is not the normal pattern that the compiler will use to allocate product terms. Finally, all of
+these product terms have runs of 0 bits in such a way that it will select both an input and its
+complement to be ANDed together. This does not make sense because the result would be a constant
+zero.
+
+To read the secret data, the bitstream needs to be converted back into "logical" bit ordering (the
+hint that the answer is ASCII text helps to show this). Once that is done, the result is shown
+below:
+
+~~ snip ~~
+L010128 11111111111111111111111111111111111111111111111111111111111111111111111111111111*
+L010208 11111111111111111111111111111111111111111111111111111111111111111111111111111111*
+L010288 11111111111111111111111111111111111111111111111111111111111111111111111111111111*
+L010368 01010100011010000110010100100000011011010110000101100111011010010110001100100000*
+L010448 01110111011011110111001001100100011100110010000001110111011001010111001001100101*
+L010528 01101110001001110111010000100000011100110111000101110101011001010110000101101101*
+L010608 01101001011100110110100000100000011011110111001101110011011010010110011001110010*
+L010688 01100001011001110110010100100000011101000110100001101001011100110010000001110100*
+L010768 01101001011011010110010100101110001000000100010001101001011100110110000101110000*
+L010848 01110000011011110110100101101110011101000110100101101110011001110010111000101110*
+~~ snip ~~
+
+Converting the bits in the last 7 macrocells into ASCII text yields
+"The magic words weren't squeamish ossifrage this time. Disappointing.." which is indeed the
+answer.

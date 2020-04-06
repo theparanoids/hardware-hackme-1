@@ -1,0 +1,4 @@
+pyasn1==0.4.5
+pycodestyle==2.5.0
+pycrypto==2.6.1
+pyserial==3.4

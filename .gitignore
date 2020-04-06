@@ -1,0 +1,6 @@
+**/*.rs.bk
+.gdb_history
+fw/Cargo.lock
+fw/target/
+stm32f417/Cargo.lock
+stm32f417/target/

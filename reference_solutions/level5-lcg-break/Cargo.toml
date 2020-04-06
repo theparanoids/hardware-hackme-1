@@ -1,0 +1,7 @@
+[package]
+name = "level5-lcg-break"
+version = "0.1.0"
+authors = ["R. Ou <robert.ou@verizonmedia.com>"]
+
+[dependencies]
+rayon = "1.0.3"

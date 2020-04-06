@@ -1,0 +1,9 @@
+This is a manual algorithm for solving level 0. Because level 0 gives a correct/wrong determination
+instantly after every digit, it is possible to brute-force each digit independently. This reduces
+the search space from 10000 guesses to just 40 guesses (10 guesses for each digit).
+
+The manual algorithm is:
+1. Input a 0. Note if an error was immediately returned or not.
+2. If an error was returned, repeat step 1 with digits 1..9 inclusive.
+3. If no error is returned, remember this value as the value of the first digit.
+4. Repeat the entire process starting from 1, but prefix all guesses with the remembered digits.

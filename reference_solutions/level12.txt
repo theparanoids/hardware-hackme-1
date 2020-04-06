@@ -1,0 +1,15 @@
+The CPLD simply just replies with a 'Y' or 'N' to indicate if the entered key was correct or not.
+The timing is deliberately relaxed enough that it can be MITMed successfully by hand. To prepare,
+connect arm-none-eabi-gdb and connect it up to the debugger:
+
+(gdb) target extended-remote /dev/<serial port>
+
+Now type `mon hackme` (short for `monitor hackme_toggle_mitm`) but DO NOT PRESS ENTER YET.
+Open a new terminal window that is close enough to this existing one that they can be quickly
+switched between. In this terminal window, open the console serial port in a serial port terminal
+program. Enter the level. When it asks for a key, just input 16 'A's and also DO NOT PRESS ENTER.
+
+Once everything is ready, press enter in the console terminal. Very quickly (you have 2 seconds)
+go to the gdb terminal and press enter. Again quickly (you have 2 additional seconds) go back to
+the console terminal and spam-press 'Y' in it. You will see the 'N' appear from the real CPLD
+followed by the software reporting success.

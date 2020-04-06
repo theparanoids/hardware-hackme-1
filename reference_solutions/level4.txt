@@ -1,0 +1,4 @@
+The bug here is that the PRNG will start with a fixed seed every single time the game is entered.
+To win this game, enter it for the first time. Supply a bet of $1 and record the actual dice roll
+for 4 turns. Then exit the game. Reenter the game and bet $100, $200, $400, $800 while guessing
+the sequence of dice rolls that came up the first time.

@@ -1,0 +1,16 @@
+[package]
+name = "stm32f405"
+version = "0.1.0"
+authors = ["Robert Ou <robert.ou@oath.com>"]
+
+[dependencies]
+cortex-m = "0.4.3"
+vcell = "0.1.0"
+bare-metal = "0.1.2"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.3.13"
+
+[features]
+rt = ["cortex-m-rt"]

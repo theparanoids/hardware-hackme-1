@@ -1,0 +1,22 @@
+[package]
+authors = ["Jorge Aparicio <jorge@japaric.io>"]
+categories = ["embedded", "no-std"]
+description = "Minimal runtime / startup for Cortex-M microcontrollers"
+documentation = "https://docs.rs/cortex-m-rt"
+keywords = ["arm", "cortex-m", "runtime", "startup"]
+license = "MIT OR Apache-2.0"
+name = "cortex-m-rt"
+repository = "https://github.com/japaric/cortex-m-rt"
+version = "0.3.15"
+
+[dependencies]
+cortex-m = "0.3.0"
+r0 = "0.2.1"
+
+[features]
+# provides a panic_fmt implementation that calls the abort instruction (`udf 0xfe`)
+abort-on-panic = []
+
+[build-dependencies]
+rustc_version = "0.2.1"
+chrono = "0.4.0"
